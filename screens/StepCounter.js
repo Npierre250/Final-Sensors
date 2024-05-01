@@ -7,7 +7,7 @@ export default function StepCounter() {
   const [subscription, setSubscription] = useState(null);
   const [stepCount, setStepCount] = useState(0);
   const [isCounting, setIsCounting] = useState(false);
-  const threshold = 1.2;
+  const threshold = 1.4;
 
   const _slow = () => Accelerometer.setUpdateInterval(1000);
   const _fast = () => Accelerometer.setUpdateInterval(16);
