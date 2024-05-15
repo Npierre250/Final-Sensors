@@ -5,10 +5,9 @@ import { Image, Text, View } from 'react-native';
 import { DrawerItemList } from '@react-navigation/drawer';
 import { FontAwesome5, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 import Home from './Home';
-import Compass from './Compass';
 import Location_screen from './Location_screen';
 import StepCounter from './StepCounter';
-
+import LightSensors from "./LightSensors"
 
 const Drawer = createDrawerNavigator();
 
@@ -50,24 +49,24 @@ function DrawerNav() {
                 component={Home}
             />
             <Drawer.Screen
-  name="Location_screen"
-  options={{
-    drawerLabel: 'Location_screen',
-    drawerIcon: () => <FontAwesome5 name="map-marker-alt" size={20} color="#7EA1FF" />, // Adjust icon name if needed
-  }}
-  component={Location_screen}
-/>
-
-            <Drawer.Screen
-                name="Compass"
+                name="Location_screen"
                 options={{
-                    drawerLabel: 'Compass',
+                    drawerLabel: 'Location_screen',
+                    drawerIcon: () => <FontAwesome5 name="map-marker-alt" size={20} color="#7EA1FF" />, // Adjust icon name if needed
+                }}
+                component={Location_screen}
+            />
+
+            {/* <Drawer.Screen
+                name="Charts"
+                options={{
+                    drawerLabel: 'Charts',
                     drawerIcon: () => (
-                        <MaterialCommunityIcons name="compass-outline" size={22} color="#7EA1FF" />
+                        <MaterialCommunityIcons name="chart-line" size={22} color="#7EA1FF" />
                     ),
                 }}
-                component={Compass}
-            />
+                component={Charts}
+            /> */}
 
             <Drawer.Screen
                 name="StepCounter"
@@ -79,6 +78,18 @@ function DrawerNav() {
                 }}
                 component={StepCounter}
             />
+
+            <Drawer.Screen
+                name="LightSensors"
+                options={{
+                    drawerLabel: 'LightSensors',
+                    drawerIcon: () => (
+                        <MaterialCommunityIcons name="lightbulb-on-outline" size={22} color="#7EA1FF" />
+                    ),
+                }}
+                component={LightSensors}
+            />
+
 
         </Drawer.Navigator>
     );
